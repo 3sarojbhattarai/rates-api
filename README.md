@@ -31,7 +31,9 @@ This application is setup with docker, so don't forget to install [Docker Engine
 
 * Test it out at http://localhost:5000 where you will see swagger documentation.
 
-* Curl command to see rates between two regions in an specified date range.
+* Curl command to see rates between two regions in an specified date range.  
+
+   GET /rates/regions
   ```
   curl "http://127.0.0.1:5000/rates/regions?date_from=2016-01-01&date_to=2016-01-10&origin=CNSGH&destination=north_europe_main"
   ```
