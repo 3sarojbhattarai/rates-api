@@ -1,0 +1,42 @@
+version: '3.6'
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    image: rates-api
+    container_name: rates-api
+    # To make real time change on docker, use volume
+    # volumes:
+    #   - <project-directory>:/rates-api
+    ports:
+      - 5000:5000
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=ratestask
+      - DB_NAME=ratestask
+    command: flask run -h 0.0.0.0
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    image: rates-db
+    container_name: rates-db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=ratestask
+      - POSTGRES_DB=ratestask
+
+volumes:
+  postgres_data:

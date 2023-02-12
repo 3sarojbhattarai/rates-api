@@ -1,0 +1,14 @@
+autopep8==2.0.0
+Faker==16.8.1
+flake8-print~=5.0.0
+flake8-quotes~=3.3.0
+flake8-use-fstring~=1.4.0
+flask==2.0.1
+flask-restx==0.5.1
+flake8~=5.0.4
+psycopg2-binary==2.9.5
+pytest~=7.2.0
+pytest-cov~=4.0.0
+pytest-sugar~=0.9.6
+python-dotenv==0.21.1
+werkzeug==2.0.1
