@@ -26,7 +26,7 @@ This application is setup with docker, so don't forget to install [Docker Engine
 * Build the images and run the containers
 
   ```
-  docker-compose up -d --build
+  docker-compose up --build
   ```
 
 * Test it out at http://localhost:5000 where you will see swagger documentation.
@@ -38,8 +38,13 @@ This application is setup with docker, so don't forget to install [Docker Engine
 
 # Test with Pytest
 
-Run Pytest 
+* To run pyest, you have to go inside docker container
+  ```
+    docker exec -it rates-api bash
+  ```
 
-```
-pytest -v
-```
+* Inside container, run Pytest 
+
+  ```
+    pytest -v
+  ```
